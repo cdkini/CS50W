@@ -1,3 +1,14 @@
 # Project 0
 
-Web Programming with Python and JavaScript
+- components
+  - abstraction.html
+  - encapsulation.html
+  - inheritance.html
+  - polymorphism.html
+- css
+  - main.css
+- img
+  - logo.png
+- scss
+  - main.scss
+- index.html
