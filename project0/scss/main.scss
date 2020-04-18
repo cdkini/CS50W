@@ -2,8 +2,15 @@ h1 {
     text-align: center;
 }
 
-ul {
-    li {
-        color: lightseagreen;
-    }
+body {
+    margin: 25px;
+}
+
+.code-comment {
+    color: rgb(0, 111, 238);
+  }
+
+table {
+    margin: 25px;
+    table-layout: auto;
 }

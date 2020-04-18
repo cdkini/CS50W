@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tenets of OOP</title>
+        <title>ELI5 OOP</title>
         <link 
         rel="stylesheet" 
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
         crossorigin="anonymous"
         >
+        <link rel="stylesheet" href="css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
     </head>
     <body>
-        <h1>Tenets of Object Oriented Programming</h1>
+        <h1>ELI5: Object Oriented Programming</h1>
         <p>
             Object oriented programming, often abbreviated as OOP, is a programming paradigm that divides 
             logic between different objects, each of which has its own unique attributes and methods. Objects are created by
@@ -31,16 +34,17 @@
             syntax or static typing, take a look at the following Java code for our Book class and try to piece together our
             implementation:
         </p>
+        <hr>
         <pre><code>
             public class Book {
 
-                // Our member variables or attributes
+                <span class="code-comment">// Our member variables or attributes</span>
                 private String title;
                 private String author;
                 private int pageCount;
                 private bool isOpen;
 
-                // Our constructor
+                <span class="code-comment">// Our constructor</span>
                 public Book(String title, String author, int pageCount) {
                     this.title = title;
                     this.author = author;
@@ -48,7 +52,7 @@
                     this.isOpen = false;
                 }
 
-                // Our class functions or methods
+                <span class="code-comment">// Our class functions or methods</span>
                 public void openBook() {
                     ...
                 }
@@ -63,6 +67,7 @@
 
             }
         </code></pre>
+        <hr>
         <p>Let's walk through this code piece by piece and break down what is happening. Firstly, let's look at our
             member variables, often referred to as attributes. As we noted earlier, books have certain pieces of data
             associated with them that are important to represent programmatically if we wish to accurately model books
@@ -99,24 +104,24 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="col-3">Object</td>
-                    <td>Def</td>
+                    <td class="col-1">Object</td>
+                    <td class="col-5">An abstract data type containing variables and related methods</td>
                 </tr>
                 <tr>
                     <td>Class</td>
-                    <td>Def</td>
+                    <td>A template or blueprint from which objects are created</td>
                 </tr>
                 <tr>
                     <td>Attribute</td>
-                    <td>Def</td>
+                    <td>Variables associated with a class</td>
                 </tr>
                 <tr>
                     <td>Method</td>
-                    <td>Def</td>
+                    <td>Functions or a set of instructions associated with a class</td>
                 </tr>
                 <tr>
                     <td>Constructor</td>
-                    <td>Def</td>
+                    <td>A method within a class that creates an instance object of the class</td>
                 </tr>
             </tbody>
             </table>

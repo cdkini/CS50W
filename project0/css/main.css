@@ -1,10 +1,14 @@
 h1 {
   text-align: center; }
 
-ul li {
-  color: lightseagreen; }
-
 body {
-  color: red; }
+  margin: 25px; }
+
+.code-comment {
+  color: #006fee; }
+
+table {
+  margin: 25px;
+  table-layout: auto; }
 
 /*# sourceMappingURL=main.css.map */
