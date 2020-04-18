@@ -2,6 +2,12 @@
 <html>
     <head>
         <title>Tenets of OOP</title>
+        <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+        crossorigin="anonymous"
+        >
     </head>
     <body>
         <h1>Tenets of Object Oriented Programming</h1>
@@ -9,7 +15,7 @@
             Object oriented programming, often abbreviated as OOP, is a programming paradigm that divides 
             logic between different objects, each of which has its own unique attributes and methods. Objects are created by
             classes, which act as object blueprints by providing initial attributes and implementations of behavior. In dividing
-            a code base in this manner, the user is able to compartmentalize data into realistic and digestible components. 
+            a code base in this manner, the user is able to divide data into digestible components to model real world objects. 
         </p>
         <p>
             Let us take a look at an example. Let's say we wanted represent a book through the lens of OOP. Firstly, let's think
@@ -21,7 +27,7 @@
         <p>
             For purposes of representing our Book class (which I shall capitalize from here on to adhere to OOP stylistic
             preferences), I will utilize Java. As a programming language that was designed with OOP in mind, Java is a great
-            way to understand the principles of OOP, which we will delve into later. Even if you are not familiar with Java
+            way to understand the primary principles of OOP, which we will delve into later. Even if you are not familiar with Java
             syntax or static typing, take a look at the following Java code for our Book class and try to piece together our
             implementation:
         </p>
@@ -84,13 +90,16 @@
             I've included a glossary of terms below for your review:
         </p>
         <div>
-            <table>
+            <table class="table table-hover table-dark">
+                <thead>
                 <tr>
-                    <th>Term</th>
-                    <th>Definition</th>
+                    <th scope="col">Term</th>
+                    <th scope="col">Definition</th>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <td>Object</td>
+                    <td class="col-3">Object</td>
                     <td>Def</td>
                 </tr>
                 <tr>
@@ -109,7 +118,7 @@
                     <td>Constructor</td>
                     <td>Def</td>
                 </tr>
-
+            </tbody>
             </table>
         </div>
         <div>
