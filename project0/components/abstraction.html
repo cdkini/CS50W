@@ -15,60 +15,70 @@
     <body>
         <h1>Abstraction</h1>
         <p>
+            Abstraction is the idea of templating or defining the details of an object without delving into the
+            specifics regarding implementation. For all intents and purposes, abstraction is creating a blueprint 
+            and allowing the user to fill in the specifics as he/she deems fit. Let's take a look at this idea 
+            by modeling Cars and Ferraris:
+        </p>
+        <hr>
+        <pre><code>
+            <span class="code-comment">// Our template of what a car should do</span>
+            public <span class="code-highlight">interface</span> Car {
+
+                void drive();
+                void brake();
+                String getMake();
+                String getModel();
+
+            }      
+
+            <span class="code-comment">// Our specific implementation of a type of car</span>
+            public class Ferrari <span class="code-highlight">implements</span> Car {
+                
+                private String model;
+                private boolean inMotion;
+
+                public Ferrari(String model) {
+                    this.model = model;
+                    this.inMotion = false;
+                }
+
+                public void drive() {
+                    inMotion = true;
+                }
+
+                public void brake() {
+                    inMotion = false;
+                }
+
+                public String getMake() {
+                    return "Ferrari";
+                }
+
+                public String getModel() {
+                    return model;
+                }
             
-        </p>
-        <hr>
-        <pre><code>
-            <span class="code-comment">// Parent or superclass</span>
-            public class Animal {
-
-                private String scientificName;
-                private float weight;
-                private String noise;
-
-
-                public Animal(String scientificName, float weight, String noise) {
-                    this.classification = scientificName;
-                    this.weight = weight;
-                    this.noise = noise;
-                }
-
-                public void makeNoise() {
-                    System.out.println(noise);
-                }
-            }
-
-            <span class="code-comment">// Child or subclass</span>
-            public class Dog <span class="code-highlight">extends</span> Animal {
-                
-                private String breed;
-
-                public Dog(String breed, float weight) {
-                    super("Canis lupis familiaris", weight, "bark!");
-                    this.breed = breed;
-                }
-
             }
         </code></pre>
         <hr>
         <p>
-            Stuff
+            Immediately, we can see that this example uses a new piece of syntax: the concept of an <code>interface</code>.
+            Interfaces are Java's answer to abstraction, allowing the user to give a high level overview as to what an 
+            object should be able to do. All cars, regardless of their type, price, or any other relevant variable, have the 
+            ability to drive and brake. Additionally, they all have makes and models that we should be able to extract. Note that 
+            our interface only incudes method signatures (the first line of a method); actual classes need to fill in the details.
         </p>
-        <hr>
-        <pre><code>
-            public static void main(String[] args) {
-
-                Animal kangaroo = new Animal("Osphranter rufus", 100, "Roo!"); <span class="code-comment">// Instantiation using constructor</span>
-                kangaroo.makeNoise();
-                
-                Dog beagle = new Dog("Beagle", 20);
-                beagle.makeNoise(); <span class="code-comment">// But we don't have a makeNoise() method in our Dog class!</span>
-
-            }
-        </code></pre>
-        <hr>
-        <p>
-
+        <p></code>
+            Let's move on to our Ferrari class. Note that the first line, <code>public class Ferrari <b>implements</b> Car</code> 
+            contains yet another new keyword. Simply put, <code>implements</code> is used to state that our class will fill in the blanks 
+            left by our method signatures set by the relevant interface. Due to this keyword, we must fill in the details we passed on 
+            during our creation of the interface, writing proper <code>drive()</code>, <code>brake()</code>, <code>getMake()</code>, and 
+            <code>getModel()</code> methods. If we do not define all the methods noted in the interface, our Ferrari class will 
+            not compile. Can you think why this must be the case? Java allowed us to define what a Car is at a high level and because 
+            we've stated that all Cars must be able to do Car related things, our Ferrari class, which implements this interface, needs to 
+            do all Car related things.
         </p>
+        <a href="../index.html">Go back to the main page</a>
     </body>
 </html>
