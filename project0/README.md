@@ -2,13 +2,21 @@
 
 - components
   - abstraction.html
+    - Webpage on OOP principle of abstraction
   - encapsulation.html
+    - Webpage on OOP principle of encapsulation
   - inheritance.html
+    - Webpage on OOP principle of inheritance
   - polymorphism.html
+    - Webpage on OOP principle of polymorphism
 - css
   - main.css
+    - Primary CSS styling (outside of Boostrap 4)
 - img
-  - logo.png
+  - car.png
+    - Image of car inheritance used in index.html
 - scss
   - main.scss
+    - Used to create main.css
 - index.html
+  - Main page of website
