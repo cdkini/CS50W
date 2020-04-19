@@ -1,17 +1,35 @@
+body {
+  margin: 25px; }
+
 h1 {
   text-align: center; }
 
-body {
-  margin: 25px; }
+table {
+  table-layout: auto; }
+
+ul > li {
+  font-style: italic; }
+
+p::selection {
+  color: #006fee;
+  background-color: yellow; }
+
+a:hover {
+  background-color: lightcoral; }
 
 .code-comment {
   color: #006fee; }
 
-.code-highlight {
+.code-highlight, .oop-terms {
   color: magenta; }
 
-table {
-  margin: 25px;
-  table-layout: auto; }
+.oop-terms {
+  font-style: bold; }
+
+#oop-cars {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%; }
 
 /*# sourceMappingURL=main.css.map */

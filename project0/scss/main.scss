@@ -1,9 +1,26 @@
+body {
+    margin: 25px;
+}
+
 h1 {
     text-align: center;
 }
 
-body {
-    margin: 25px;
+table {
+    table-layout: auto;
+}
+
+ul > li {
+    font-style: italic;
+}
+
+p::selection {
+    color: rgb(0, 111, 238);
+    background-color: yellow;
+}
+
+a:hover {
+    background-color: lightcoral;
 }
 
 .code-comment {
@@ -14,7 +31,14 @@ body {
     color: rgb(255,0,255);
 }
 
-table {
-    margin: 25px;
-    table-layout: auto;
+.oop-terms {
+    @extend .code-highlight;
+    font-style: bold;
+}
+
+#oop-cars {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
 }

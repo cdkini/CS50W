@@ -13,55 +13,68 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <h1>Encapsulation>
-        <p>Description of what encapsulation is well as an introduction.</p>
+        <h1>Encapsulation</h1>
+        <p>
+            Encapsulation is the idea of wrapping data (attributes) and code acting on the data (methods) together as a single 
+            unit. In doing so, the internals of our class are hidden or protected from outside misuse or interference. Encapsulation 
+            is an effective strategy to reduce code complexity and prevent improper access across objects. To better understand this 
+            concept, let's delve into an example regarding my bank account:
+        </p>
         <hr>
         <pre><code>
-            <span class="code-comment">// Parent or superclass</span>
-            public class Animal {
+            public class BankAccount {
 
-                private String scientificName;
-                private float weight;
-                private String noise;
-
-
-                public Animal(String scientificName, float weight, String noise) {
-                    this.classification = scientificName;
-                    this.weight = weight;
-                    this.noise = noise;
-                }
-
-                public void makeNoise() {
-                    System.out.println(noise);
-                }
-            }
-
-            <span class="code-comment">// Child or subclass</span>
-            public class Dog <span class="code-highlight">extends</span> Animal {
-                
-                private String breed;
-
-                public Dog(String breed, float weight) {
-                    super("Canis lupis familiaris", weight, "bark!");
-                    this.breed = breed;
-                }
+                public String bankName; <span class="code-comment">// Why is this public?</span>
+                private String password; <span class="code-comment">// But this private?</span>
+                private double balance;
 
             }
         </code></pre>
         <hr>
-        <p>Stuff</p>
+        <p>
+            Although we have not addressed it yet, the presence of modifiers such as <code>public</code> and <code>private</code> 
+            are everpresent in our code and play a large role in upholding proper encapsulation. While there are multiple access 
+            modifiers (public, private, package-private, and protected), we will focus on <code>public</code> and <code>private</code> 
+            for purposes of this tutorial. Simply put, <code>public</code> allows any other class to access the particular attribute or 
+            method we are access modifying. Conversely, <code>private</code> restricts access to within the class, acting much more 
+            restrictive. In our example above, we set <code>bankName</code> to <code>public</code> but <code>password</code> and <code>balance</code> 
+            to <code>private</code>. Can you think why this might be the case? Let's take a look at a use case to better understand:
+        </p>
         <hr>
         <pre><code>
             public static void main(String[] args) {
 
-                Animal kangaroo = new Animal("Osphranter rufus", 100, "Roo!"); <span class="code-comment">// Instantiation using constructor</span>
-                kangaroo.makeNoise();
-                
-                Dog beagle = new Dog("Beagle", 20);
-                beagle.makeNoise(); <span class="code-comment">// But we don't have a makeNoise() method in our Dog class!</span>
+                BankAccount myCheckingAccount = new BankAccount();
+                myCheckingAccount.bankName = "Wells Fargo"; <span class="code-comment">// This attribute has public access so this is fine</span>
+                myCheckingAccount.password = "password123"; <span class="code-comment">// ERROR: We can't access a private attribute!</span>
+                myCheckingAccount.balance = 1000000000.00; <span class="code-comment">// ERROR: If we didn't protect access, you could create money out of thin air</span> 
 
             }
         </code></pre>
         <hr>
+        <p>
+            Please note that the example we are using is not necessarily indicative of effective OOP or well thought out 
+            encapsulation but rather an example to demonstrate the base concept. Our <code>bankName</code> is not particularly 
+            significant in comparison to our <code>password</code> and <code>balance</code> attributes, which are highly sensitive 
+            in nature. If we had set those attributes to <code>public</code>, anyone that had access to our BankAccount instance 
+            could change the password and account balance to their liking. Proper encapsulation is an extension of abstraction, 
+            hiding implementation details within a class; as long as the class works as we would expect, the specifics behind its 
+            implementation are not important to us. Before we wrap up this topic, let's take a look at getters and setters, methods 
+            that allow us to access data without breaking encapsulation.
+        </p>
+        <hr>
+        <pre><code>
+            public double getBalance() {
+                return balance; <span class="code-comment">// Allows us to access our account balance without being able to change it directly</span>
+            }
+        </code></pre>
+        <p>
+            If we wanted to see how much money we had in our checking account but our <code>balance</code> was set to <code>private</code>, 
+            we could use a method like <code>getBalance()</code>. This method, called a getter, allows us to obtain our current balance 
+            while still protecting our <code>balance</code> attribute from any interference or misuse. The opposite, a setter, allows us to 
+            set attributes without directly altering the instance's attributes. The use cases for these methods vary but they demonstrate proper 
+            data protection and encapsulation within our classes.
+        </p>
     </body>
+    <a href="../index.html">Go back to the main page</a>
 </html>
