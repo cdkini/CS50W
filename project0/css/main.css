@@ -7,6 +7,9 @@ body {
 .code-comment {
   color: #006fee; }
 
+.code-highlight {
+  color: magenta; }
+
 table {
   margin: 25px;
   table-layout: auto; }

@@ -1,9 +1,103 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Webpage</title>
+        <title>ELI5 OOP - Inheritance</title>
+        <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+        crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="../css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
     </head>
     <body>
-        Hello, world!
+        <h1>Inheritance</h1>
+        <p> 
+            Inheritance is the idea of deriving a class from another class to establish a hierarchy of classes, allowing for
+            the shared usage of a set of attributes and methods. Let us first look at an example of this ideal before we
+            delve further into the topic. Note below for two separate classes, which we've titled Animal and Dog to represent
+            real-life objects we wish to model in our code:
+        </p>
+        <hr>
+        <pre><code>
+            <span class="code-comment">// Parent or superclass</span>
+            public class Animal {
+
+                private String scientificName;
+                private float weight;
+                private String noise;
+
+
+                public Animal(String scientificName, float weight, String noise) {
+                    this.classification = scientificName;
+                    this.weight = weight;
+                    this.noise = noise;
+                }
+
+                public void makeNoise() {
+                    System.out.println(noise);
+                }
+            }
+
+            <span class="code-comment">// Child or subclass</span>
+            public class Dog <span class="code-highlight">extends</span> Animal {
+                
+                private String breed;
+
+                public Dog(String breed, float weight) {
+                    super("Canis lupis familiaris", weight, "bark!"); <span class="code-comment">// The parent class constructor</span>
+                    this.breed = breed;
+                }
+
+            }
+        </code></pre>
+        <hr>
+        <p>
+            Nothing above is drastically different from the example we walked through in the main page outside of
+            <code>public class Dog <b>extends</b> Animal</code> within our second class definition. Although the
+            <code>extends</code> keyword does not cover all of inheritance, it makes up a large portion of Java class
+            inheritance. Thinking about these classes outside of a programming context, it is evident that dogs are a natural
+            extension of a generic animal; they both share similar characteristics and behaviors, although an animal is a bit
+            more vague than a dog. This relationship, often defined as an "IS-A" relationship, can be clearly demonstrated
+            in our code and allows us to reuse code, reducing the complexity of our programs.
+        </p>
+        <p>
+            Let's take a quick look at our Animal class. Although an oversimplification, we can state that all Animals have 
+            the attributes of <code>scientificName</code>, <code>weight</code>, and <code>noise</code>. When thinking of Dogs,
+            don't they share all these attributes? Rather than retype all the code from our Animal class, we can extend our
+            definition of an Animal to create a more specific, nuanced version to suit our needs. Dogs have <code>scientificName</code>,
+            <code>weight</code>, and <code>noise</code> but they also have <code>breed</code> that we want to account for. Additionally,
+            as we know that all dogs are part of the <i>Canis lupis familiaris</i> family and share the same noise so we can set default 
+            values for all Dog <code>scientificName</code> and <code>noise</code> attributes. We can use the Animal class, 
+            the parent class we are inheriting from, by calling its constructor and add our Dog specific attributes after.
+        </p>
+        <p>
+            Let's take a look at how this idea of inheritance extends over to methods:
+        </p>
+        <hr>
+        <pre><code>
+            public static void main(String[] args) {
+
+                Animal kangaroo = new Animal("Osphranter rufus", 100, "Roo!"); <span class="code-comment">// Instantiation using constructor</span>
+                kangaroo.makeNoise();
+                
+                Dog beagle = new Dog("Beagle", 20);
+                beagle.makeNoise(); <span class="code-comment">// But we don't have a makeNoise() method in our Dog class!</span>
+
+                <span class="code-comment">// kangaroo.makeNoise() -> "Roo!"</span>
+                <span class="code-comment">// beagle.makeNoise() -> "Bark!"</span>
+            }
+        </code></pre>
+        <hr>
+        <p>
+            How is it that our beagle instance of our Dog class was able to <code>makeNoise()</code> when we did not write
+            the method in our class definition? Inheritance, the idea of extending a base class definition to similar but 
+            different objects, also works for methods. Both Animals and Dogs have <code>makeNoise()</code> methods available 
+            to them due to their hierarchical relationship. A Dog IS-AN Animal and so its invocation of <code>makeNoise()</code> 
+            makes perfect sense.
+        </p>
+        <a href="../index.html">Go back to the main page</a>
     </body>
 </html>

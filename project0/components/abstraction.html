@@ -1,9 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Webpage</title>
+        <title>ELI5 OOP - Abstraction</title>
+        <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+        crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="../css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
     </head>
     <body>
-        Hello, world!
+        <h1>Abstraction</h1>
+        <p>
+            
+        </p>
+        <hr>
+        <pre><code>
+            <span class="code-comment">// Parent or superclass</span>
+            public class Animal {
+
+                private String scientificName;
+                private float weight;
+                private String noise;
+
+
+                public Animal(String scientificName, float weight, String noise) {
+                    this.classification = scientificName;
+                    this.weight = weight;
+                    this.noise = noise;
+                }
+
+                public void makeNoise() {
+                    System.out.println(noise);
+                }
+            }
+
+            <span class="code-comment">// Child or subclass</span>
+            public class Dog <span class="code-highlight">extends</span> Animal {
+                
+                private String breed;
+
+                public Dog(String breed, float weight) {
+                    super("Canis lupis familiaris", weight, "bark!");
+                    this.breed = breed;
+                }
+
+            }
+        </code></pre>
+        <hr>
+        <p>
+            Stuff
+        </p>
+        <hr>
+        <pre><code>
+            public static void main(String[] args) {
+
+                Animal kangaroo = new Animal("Osphranter rufus", 100, "Roo!"); <span class="code-comment">// Instantiation using constructor</span>
+                kangaroo.makeNoise();
+                
+                Dog beagle = new Dog("Beagle", 20);
+                beagle.makeNoise(); <span class="code-comment">// But we don't have a makeNoise() method in our Dog class!</span>
+
+            }
+        </code></pre>
+        <hr>
+        <p>
+
+        </p>
     </body>
 </html>
