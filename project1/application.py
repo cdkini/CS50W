@@ -23,3 +23,8 @@ db = scoped_session(sessionmaker(bind=engine))
 @app.route("/")
 def index():
     return "Project 1: TODO"
+
+# TODO: Delete this once done with testing
+@app.route("/<string:name>")
+def hello(name):
+    return f"Hello there, {name}!"
