@@ -1,3 +1,1 @@
-# Project 1
-
-Web Programming with Python and JavaScript
+<h3>Project 1 - Wiki</h3>
