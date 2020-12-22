@@ -1,3 +1,5 @@
+<h3>Project 0 - Search</h3>
+
 Your website must meet the following requirements.
 
 - Pages. Your website should have at least three pages: one for Google Search, one for Google Image Search, and one for Google Advanced Search.
