@@ -16,14 +16,14 @@ a {
     margin:25px;
 }
 
-.search_bar {
+#search_bar {
     width: 500px;
     border-radius:25px;
     margin:15px;
     padding:8px;
 }
 
-.search_button {
+#search_button {
     color: black;
     background-color:#e7e7e7;
     text-align: center;
@@ -32,11 +32,11 @@ a {
     padding:10px;
 }
 
-.search_button:hover {
+#search_button:hover {
     border: 1px;
 }
 
-.logo {
+#logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
