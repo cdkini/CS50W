@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Search</title>
+    <title>Advanced Search</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,30 +21,26 @@
     <hr />
     <br />
     <div>Find pages with...</div>
-    <div>
-      <label>all these words:</label>
-      <form action="https://google.com/search">
-        <input type="text" name="q" />
-      </form>
-    </div>
-    <div>
-      <label>this exact word or phase:</label>
-      <form action="https://google.com/search">
-        <input type="text" name="q" />
-      </form>
-    </div>
-    <div>
-      <label>any of these words:</label>
-      <form action="https://google.com/search">
-        <input type="text" name="q" />
-      </form>
-    </div>
-    <div>
-      <label>none of these words:</label>
-      <form action="https://google.com/search">
-        <input type="text" name="q" />
-      </form>
-    </div>
-    <input id="search_button" type="submit" value="Advanced Search" />
+    <form action="https://google.com/search">
+      <div>
+        <label>all these words:</label>
+        <input type="text" name="as_q" />
+      </div>
+      <div>
+        <label>this exact word or phase:</label>
+        <input type="text" name="as_epq" />
+      </div>
+      <div>
+        <label>any of these words:</label>
+        <input type="text" name="as_oq" />
+      </div>
+      <div>
+        <label>none of these words:</label>
+        <input type="text" name="as_eq" />
+      </div>
+      <div style="text-align: right">
+        <input id="search_button" type="submit" value="Advanced Search" />
+      </div>
+    </form>
   </body>
 </html>
